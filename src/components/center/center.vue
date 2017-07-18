@@ -75,7 +75,7 @@
   import Vue from 'vue'
   import VueRouter from 'vue-router'
   Vue.use(VueRouter)
-  const router = new VueRouter()
+  // const router = new VueRouter()
   import Jam from '../com/jam'
   export default {
     data () {
@@ -87,7 +87,7 @@
           pass: '',
           code: ''
         },
-        jam: function() {}
+        jam: function () {}
       }
     },
     created () {
