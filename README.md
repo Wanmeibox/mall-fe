@@ -1,6 +1,6 @@
-# malll
+# mall-fe
 
-> A Vue.js project
+> our first project
 
 ## Build Setup
 
