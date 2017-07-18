@@ -1,23 +1,22 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div class="shop">
+    <comHeader></comHeader>
     <router-view></router-view>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'app'
-}
+<script type="text/ecmascript-6">
+  import comHeader from './components/com/header.vue'
+  export default {
+    data () {
+      return {}
+    },
+    components: {
+      comHeader: comHeader
+    }
+  }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss" scope>
+  @import './css/base.scss'
 </style>
