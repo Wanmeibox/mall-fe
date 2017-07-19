@@ -22,7 +22,8 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src')
+      '@': resolve('src'),
+      'vux-components': 'vux/src/components/'
     }
   },
   module: {
@@ -39,6 +40,10 @@ module.exports = {
       {
        test: /\.scss$/,
        loaders: ["style", "css", "sass"]
+      },
+      {
+        test: /vux.src.*?js$/,
+        loader: 'babel'
       },
       {
         test: /\.vue$/,

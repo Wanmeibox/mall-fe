@@ -1,18 +1,21 @@
 <template>
   <div class="shop">
-    <comHeader></comHeader>
+    <!-- <comHeader></comHeader> -->
     <router-view></router-view>
+    <comFooter></comFooter>
   </div>
 </template>
 
 <script type="text/ecmascript-6">
-  import comHeader from './components/com/header.vue'
+  // import comHeader from './components/com/header.vue'
+  import comFooter from './components/com/footer.vue'
   export default {
     data () {
       return {}
     },
     components: {
-      comHeader: comHeader
+      // comHeader: comHeader,
+      comFooter: comFooter
     }
   }
 </script>
