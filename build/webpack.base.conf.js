@@ -42,10 +42,6 @@ module.exports = {
        loaders: ["style", "css", "sass"]
       },
       {
-        test: /vux.src.*?js$/,
-        loader: 'babel'
-      },
-      {
         test: /\.vue$/,
         loader: 'vue-loader',
         options: vueLoaderConfig
@@ -78,6 +74,10 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /vux.src.*?js$/,
+        loader: 'babel-loader'
       }
     ]
   }
