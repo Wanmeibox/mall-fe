@@ -13,8 +13,8 @@ export default {
     return {
       taps: [
         {goname: 'index', classname: 'icon-shouye', infoname: '首页'},
-        {goname: 'center', classname: 'icon-yuanjiaojuxing', infoname: '分类'},
-        {goname: 'center', classname: 'icon-gouwuche', infoname: '购物车'},
+        {goname: 'class', classname: 'icon-yuanjiaojuxing', infoname: '分类'},
+        {goname: 'cart', classname: 'icon-gouwuche', infoname: '购物车'},
         {goname: 'center', classname: 'icon-wode', infoname: '我的'}
       ]
     }
@@ -40,7 +40,7 @@ export default {
 
 <style lang="scss" scope>
   @import '../../css/calcuterem.scss';
-  @import url('//at.alicdn.com/t/font_zm88ms72wklnmi.css');
+  @import url('//at.alicdn.com/t/font_wbl9xael1jgx2yb9.css');
   .footer {
     position: fixed;
     background-color: #f6f6f6;

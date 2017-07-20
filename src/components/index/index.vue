@@ -19,6 +19,10 @@
     // data () {
     //
     // },
+    created () {
+      this.$store.dispatch('changeHeaderTitle', '首页')
+      this.$store.dispatch('changeBackState', false)
+    },
     components: {
       comSwiper: comSwiper
     }

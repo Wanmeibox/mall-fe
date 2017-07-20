@@ -1,8 +1,7 @@
 <template>
-  <div class="s-header">
-    <a class="left" @click="showSideBar" href="javascript:;">导航</a>
-    <a class="right" @click="goback" href="javascript:;">后退</a>
-    <h4 class="center">{{headerTitle}}</h4>
+  <div class="mall-header" v-show="showHeader">
+    <div v-show="showBack" class="back iconfont icon-back" @click="goback">返回</div>
+    <h4>{{headerTitle}}</h4>
   </div>
 </template>
 
@@ -14,15 +13,15 @@ export default {
   computed: {
     headerTitle () {
       return this.$store.getters.getHeaderTitle
+    },
+    showBack () {
+      return this.$store.getters.getBackState
+    },
+    showHeader () {
+      return !this.$store.getters.getHeaderState
     }
   },
   methods: {
-    showSideBar () {
-      return this.$store.dispatch('changeSideBarState', true)
-    },
-    hideSideBar () {
-      return this.$store.dispatch('changeSideBarState', false)
-    },
     goback () {
       this.$router.go(-1)
     }
@@ -31,39 +30,26 @@ export default {
 </script>
 
 <style lang="scss" scope>
-  .s-header {
+  @import '../../css/base.scss';
+  @import '../../css/calcuterem.scss';
+  @import url('//at.alicdn.com/t/font_msyoyeibkai3sor.css');
+  .mall-header {
     position: fixed;
     top: 0;
     z-index: 100;
-    height: 50px;
-    width: 16rem;
-    max-width: 16rem;
-    min-width: 320px;
-    margin: 0 auto;
+    height: rem(80px);
+    line-height: rem(80px);
+    width: 100%;
     color: #fff;
-    background-color: #282828;
-    .center,a {
-      height: 50px;
-      line-height: 50px;
-    }
-    .center {
-      position: relative;
-      margin-left: 2rem;
-      margin-right: 2rem;
-      text-align: center;
-      color: #efefef;
-    }
-    a {
-      display: inline-block;
-      width: 2rem;
-      text-align: center;
-      color: #fff;
-    }
-    .left {
-      float: left;
-    }
-    .right {
-      float: right;
+    background-color: #000;
+    font-size: rem(32px);
+    text-align: center;
+
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
     }
   }
 </style>

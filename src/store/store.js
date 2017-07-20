@@ -4,28 +4,38 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    sideBarState: false,
-    headerTitle: '默认标题'
+    headerState: ((/micromessenger/gi).test(navigator.userAgent)) || ((/alipay/gi).test(navigator.userAgent)),
+    backState: false,
+    headerTitle: '小盒子购物口水站地'
   },
   mutations: {
-    changeSideBarState (state, boolean) {
-      state.sideBarState = boolean
+    changeHeaderState (state, val) {
+      state.headerState = val
     },
-    changeHeaderTitle (state, str) {
-      state.headerTitle = str
+    changeBackState (state, val) {
+      state.backState = val
+    },
+    changeHeaderTitle (state, val) {
+      state.headerTitle = val
     }
   },
   actions: {
-    changeSideBarState ({commit}, status) {
-      commit('changeSideBarState', status)
+    changeHeaderState ({commit}, status) {
+      commit('changeHeaderState', status)
     },
-    changeHeaderTitle ({commit}, str) {
-      commit('changeHeaderTitle', str)
+    changeBackState ({commit}, status) {
+      commit('changeBackState', status)
+    },
+    changeHeaderTitle ({commit}, status) {
+      commit('changeHeaderTitle', status)
     }
   },
   getters: {
-    getSideBarState (state) {
+    getHeaderState (state) {
       return state.sideBarState
+    },
+    getBackState (state) {
+      return state.backState
     },
     getHeaderTitle (state) {
       return state.headerTitle
