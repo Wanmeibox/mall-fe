@@ -7,7 +7,9 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-module.exports = {
+const vuxLoader = require('vux-loader')
+
+const webpackConfig = {
   entry: {
     app: './src/main.js'
   },
@@ -74,11 +76,14 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
-      },
-      {
-        test: /vux.src.*?js$/,
-        loader: 'babel-loader'
       }
     ]
   }
 }
+
+module.exports = vuxLoader.merge(webpackConfig, {
+  options: {},
+  plugins: [{
+        name: 'vux-ui'
+      }]
+  })

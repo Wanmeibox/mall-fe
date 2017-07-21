@@ -24,7 +24,7 @@
       this.$store.dispatch('changeBackState', false)
     },
     components: {
-      comSwiper: comSwiper
+      comSwiper
     }
   }
 </script>

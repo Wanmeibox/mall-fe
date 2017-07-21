@@ -13,7 +13,7 @@ export default new Router({
   routes: [
     {
       path: '/',
-      redirect: '/center',
+      redirect: '/cart',
       component: App,
       children: [
         {path: 'index', name: 'index', component: Index},

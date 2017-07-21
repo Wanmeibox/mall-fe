@@ -36,3 +36,8 @@ input[type=text] {
   -webkit-transform: translate(-50%, 0);
   transform: translate(-50%, 0);
 }
+
+ a {
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
