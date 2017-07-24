@@ -74,5 +74,22 @@
         color: #ea3323;
       }
     }
+
+    .footer-act {
+      text-decoration: none;
+      h3 {
+        font-size: rem(32px);
+        line-height: rem(36px);
+        color: #333;
+      }
+
+      p {
+        color: #333;
+      }
+
+      .price {
+        color: #ea3323;
+      }
+    }
   }
 </style>

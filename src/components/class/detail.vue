@@ -4,11 +4,11 @@
       <div class="shop-pic" flex="cross:center">
         <figure flex-box="1"><img src="../../assets/shop.jpg" alt=""></figure>
       </div>
-      <h3>香辣风味鱼豆腐22g</h3>
-      <div class="shop-price">￥1</div>
+      <h3>{{detail.GoodsName}}</h3>
+      <div class="shop-price">￥{{detail.Price}}</div>
     </header>
     <div class="one-detail">
-      商品详情
+      {{detail.Content}}
     </div>
     <div class="shop-add" flex="cross:center">
       <router-link :to="{ name: 'cart', params: {} }">
@@ -23,9 +23,11 @@
 <script>
   import { InlineXNumber, Badge } from 'vux'
   export default {
-    // data () {
-    //
-    // },
+    data () {
+      return {
+        detail: {}
+      }
+    },
     components: {
       InlineXNumber,
       Badge
@@ -45,11 +47,7 @@
           url: this.$axios.api('goods/get?id=1')
         }).then((result) => {
           console.log(result)
-          // this.dataCate = response.data
-          // this.types = this.dataCate.data.types
-          // this.allBrand = this.dataCate.data.allBrand
-        }, (error) => {
-          console.log(error)
+          this.detail = result.data
         })
       }
     }

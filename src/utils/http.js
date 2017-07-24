@@ -1,5 +1,5 @@
 import axios from 'axios'
-import loading from './loading.js'
+// import loading from './loading.js'
 
 export default (userCfg) => new Promise((resolve, reject) => {
   const _cfg = Object.assign({}, {
@@ -25,9 +25,9 @@ export default (userCfg) => new Promise((resolve, reject) => {
     }, () => {})
   }
 
-  loading.show()
+  // loading.show()
   axios.get(_cfg.url).then((result) => {
-    loading.hide()
+    // loading.hide()
     console.log(result)
     if (result.data.success) {
       showMsg('success', true).then(() => {
@@ -39,7 +39,7 @@ export default (userCfg) => new Promise((resolve, reject) => {
       })
     }
   }, (error) => {
-    loading.hide()
+    // loading.hide()
     console.log(error)
     showMsg('接口有误')
   })
