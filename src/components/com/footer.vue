@@ -21,7 +21,7 @@ export default {
   },
   computed: {
     showFooter () {
-      return this.$store.getters.getHeaderState
+      return this.$store.getters.getFooterState
     }
   }
 }
@@ -40,15 +40,16 @@ export default {
     margin: 0 auto;
     font-size: rem(28px);
     text-align: center;
+    padding-top: rem(10px);
     .footer-item {
       color: #777;
     }
     span {
-      line-height: 26px;
+      line-height: 1.6;
     }
     div {
       font-size: rem(40px);
-      line-height: rem(70px);
+      line-height: rem(58px);
     }
 
     .footer-act {

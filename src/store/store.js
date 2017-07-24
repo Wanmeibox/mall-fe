@@ -11,7 +11,7 @@ export default new Vuex.Store({
   },
   mutations: {
     changeFooterState (state, val) {
-      state.headerState = val
+      state.footerState = val
     },
     changeHeaderState (state, val) {
       state.headerState = val

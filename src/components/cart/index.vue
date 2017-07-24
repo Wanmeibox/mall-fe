@@ -16,7 +16,7 @@
     created () {
       this.$store.dispatch('changeHeaderTitle', '购物车')
       this.$store.dispatch('changeBackState', false)
-      this.$store.dispatch('changeHeaderState', true)
+      this.$store.dispatch('changeFooterState', true)
     },
     components: {
       shop

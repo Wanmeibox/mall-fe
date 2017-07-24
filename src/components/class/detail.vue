@@ -35,7 +35,7 @@
     created () {
       this.$store.dispatch('changeHeaderTitle', '商品详情')
       this.$store.dispatch('changeBackState', true)
-      this.$store.dispatch('changeHeaderState', false)
+      this.$store.dispatch('changeFooterState', false)
       this.getData()
     },
     methods: {

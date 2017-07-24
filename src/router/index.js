@@ -9,6 +9,7 @@ import Index from '../components/index'
 import Cart from '../components/cart'
 import Class from '../components/class'
 import Detail from '../components/class/detail.vue'
+// import Ball from '../components/ball/ball.vue'
 
 export default new Router({
   routes: [
@@ -22,6 +23,7 @@ export default new Router({
         {path: 'cart', name: 'cart', component: Cart},
         {path: 'class', name: 'class', component: Class},
         {path: 'detail', name: 'detail', component: Detail}
+        // {path: 'ball', name: 'ball', component: Ball}
       ]
     }
   ],

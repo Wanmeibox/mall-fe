@@ -19,7 +19,7 @@
     created () {
       this.$store.dispatch('changeHeaderTitle', '商品类别')
       this.$store.dispatch('changeBackState', false)
-      this.$store.dispatch('changeHeaderState', true)
+      this.$store.dispatch('changeFooterState', true)
       // this.getData()
     },
     methods: {

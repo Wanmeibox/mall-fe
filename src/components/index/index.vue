@@ -22,7 +22,7 @@
     created () {
       this.$store.dispatch('changeHeaderTitle', '首页')
       this.$store.dispatch('changeBackState', false)
-      this.$store.dispatch('changeHeaderState', true)
+      this.$store.dispatch('changeFooterState', true)
     },
     components: {
       comSwiper

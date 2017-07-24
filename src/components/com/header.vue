@@ -44,11 +44,12 @@ export default {
     background-color: #000;
     font-size: rem(32px);
     text-align: center;
+    padding: 0 rem(30px);
 
     .back {
       position: absolute;
       top: 0;
-      left: 0;
+      left: rem(30px);
       height: 100%;
     }
   }

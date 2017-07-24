@@ -27,7 +27,7 @@ export default {
   created () {
     this.$store.dispatch('changeHeaderTitle', '个人中心')
     this.$store.dispatch('changeBackState', false)
-    this.$store.dispatch('changeHeaderState', true)
+    this.$store.dispatch('changeFooterState', true)
   },
   components: {
     Group,
