@@ -6,9 +6,13 @@ export default new Vuex.Store({
   state: {
     headerState: ((/micromessenger/gi).test(navigator.userAgent)) || ((/alipay/gi).test(navigator.userAgent)),
     backState: false,
-    headerTitle: '小盒子购物口水站地'
+    headerTitle: '小盒子购物口水站地',
+    footerState: true
   },
   mutations: {
+    changeFooterState (state, val) {
+      state.headerState = val
+    },
     changeHeaderState (state, val) {
       state.headerState = val
     },
@@ -20,6 +24,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    changeFooterState ({commit}, status) {
+      commit('changeFooterState', status)
+    },
     changeHeaderState ({commit}, status) {
       commit('changeHeaderState', status)
     },
@@ -31,8 +38,11 @@ export default new Vuex.Store({
     }
   },
   getters: {
+    getFooterState (state) {
+      return state.footerState
+    },
     getHeaderState (state) {
-      return state.sideBarState
+      return state.headerState
     },
     getBackState (state) {
       return state.backState

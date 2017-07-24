@@ -1,5 +1,5 @@
 <template>
-  <div class="footer" flex="box:mean">
+  <div v-show="showFooter" class="footer" flex="box:mean">
     <router-link class="footer-item" v-for="(item, index) in taps" :key="index" :to="{ name: item.goname, params: {}, activeClass: 'footer-active' }">
       <div :class="['iconfont', item.classname]"></div>
       <span>{{item.infoname}}</span>
@@ -20,19 +20,8 @@ export default {
     }
   },
   computed: {
-    headerTitle () {
-      return this.$store.getters.getHeaderTitle
-    }
-  },
-  methods: {
-    showSideBar () {
-      return this.$store.dispatch('changeSideBarState', true)
-    },
-    hideSideBar () {
-      return this.$store.dispatch('changeSideBarState', false)
-    },
-    goback () {
-      this.$router.go(-1)
+    showFooter () {
+      return this.$store.getters.getHeaderState
     }
   }
 }
@@ -49,7 +38,7 @@ export default {
     // height: rem(96px);
     width: rem(750px);
     margin: 0 auto;
-    font-size: rem(24px);
+    font-size: rem(28px);
     text-align: center;
     .footer-item {
       color: #777;

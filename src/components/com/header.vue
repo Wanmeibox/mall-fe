@@ -39,7 +39,7 @@ export default {
     z-index: 100;
     height: rem(80px);
     line-height: rem(80px);
-    width: 100%;
+    width: rem(750px);
     color: #fff;
     background-color: #000;
     font-size: rem(32px);

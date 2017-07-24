@@ -1,3 +1,4 @@
+@import "./calcuterem.scss";
 body, div, ul, li, h3, h4, h5, form, input, button, textarea, p {margin: 0;padding: 0;}
 address,em,strong,h3,h4,h5,i{font-style: normal;font-weight: normal;}
 ul,li{list-style: none;}
@@ -11,6 +12,10 @@ input {
 
 textarea {
   -webkit-appearance: none;
+}
+
+#app {
+  width: rem(750px);
 }
 
 input[type=button],
