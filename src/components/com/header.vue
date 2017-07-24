@@ -31,7 +31,6 @@ export default {
 
 <style lang="scss" scope>
   @import '../../css/base.scss';
-  @import '../../css/calcuterem.scss';
   @import url('//at.alicdn.com/t/font_msyoyeibkai3sor.css');
   .mall-header {
     position: fixed;

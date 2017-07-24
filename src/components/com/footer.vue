@@ -28,7 +28,7 @@ export default {
 </script>
 
 <style lang="scss" scope>
-  @import '../../css/calcuterem.scss';
+  @import '../../css/base.scss';
   @import url('//at.alicdn.com/t/font_wbl9xael1jgx2yb9.css');
   .footer {
     position: fixed;

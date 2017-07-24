@@ -29,7 +29,6 @@
 
 <style lang="scss" scope>
   @import '../../css/base.scss';
-  @import '../../css/calcuterem.scss';
   @import url('//at.alicdn.com/t/font_cf2g0jtuzgxpqfr.css');
 
   .cart-item {

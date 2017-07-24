@@ -1,64 +1,46 @@
 <template>
   <div class="mall-index">
-    <comSwiper></comSwiper>
-    <div class="shop-list">
-      <dl class="shop-item">
-        <dt><img src="http://ohe5avf3y.bkt.clouddn.com/pro/vue/vue-shop/vue-proj-ban.webp" alt=""></dt>
-        <dd>
-          <h3>商品主要名称或者其他</h3>
-          <span>商品描述或者其他</span>
-        </dd>
-      </dl>
-    </div>
+    <comSwiper :banners="banners" v-if="banners"></comSwiper>
+    <subject :subjectList="subjectList" v-if="subjectList"></subject>
   </div>
 </template>
 
 <script>
   import comSwiper from '../com/swiper.vue'
+  import subject from '../com/subject.vue'
   export default {
-    // data () {
-    //
-    // },
+    data () {
+      return {
+        banners: [],
+        subjectList: []
+      }
+    },
     created () {
       this.$store.dispatch('changeHeaderTitle', '首页')
       this.$store.dispatch('changeBackState', false)
       this.$store.dispatch('changeFooterState', true)
+      this.getIndexBanner()
+      this.getDetail()
     },
     components: {
-      comSwiper
+      comSwiper,
+      subject
+    },
+    methods: {
+      getIndexBanner () {
+        this.$axios.http({
+          url: this.$axios.api('subject/getIndexBanner')
+        }).then((result) => {
+          this.banners = result.data
+        })
+      },
+      getDetail () {
+        this.$axios.http({
+          url: this.$axios.api('subject/getIndexSubject')
+        }).then((result) => {
+          this.subjectList = result.data
+        })
+      }
     }
   }
 </script>
-
-<style lang="scss" scope>
-  @import '../../css/calcuterem.scss';
-  .shop-list {
-    padding: rem(20px) 0;
-    width: 100%;
-  }
-
-  .shop-item {
-    background-color: #fff;
-
-    dt {
-      img {
-        width: 100%;
-      }
-    }
-
-    dd {
-      padding: rem(14px) rem(20px) rem(24px);
-      line-height: rem(50px);
-      color: #222;
-
-      h3 {
-        font-size: rem(32px);
-        font-weight: bold;
-      }
-      span {
-        color: #5073cd;
-        font-size: rem(28px);
-      }
-    }
-  }
-</style>

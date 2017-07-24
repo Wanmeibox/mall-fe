@@ -1,7 +1,7 @@
 <template>
   <div class="mall-swiper">
     <Swipe>
-      <SwipeItem v-for="(item, index) in pics" :key="index"><img :src="item"/></SwipeItem>
+      <SwipeItem v-for="(item, index) in banners" :key="index"><img :src="item.ImagePath"/></SwipeItem>
     </Swipe>
   </div>
 </template>
@@ -10,9 +10,15 @@
   import { Swipe, SwipeItem } from 'vue-swipe'
   import 'vue-swipe/dist/vue-swipe.css'
   export default {
-    data () {
-      return {
-        pics: ['http://ohe5avf3y.bkt.clouddn.com/pro/vue/vue-shop/vue-proj-ban.webp', 'http://ohe5avf3y.bkt.clouddn.com/pro/vue/vue-shop/vue-proj-ban.webp', 'http://ohe5avf3y.bkt.clouddn.com/pro/vue/vue-shop/vue-proj-ban.webp']
+    // data () {
+    //   return {
+    //     pics:
+    //   }
+    // },
+    props: {
+      banners: {
+        type: Array,
+        required: true
       }
     },
     components: {
@@ -23,7 +29,7 @@
 </script>
 
 <style lang="scss" scope>
-  @import '../../css/calcuterem.scss';
+  @import '../../css/base.scss';
   .mall-swiper {
     height: rem(360px);
     width: rem(750px);

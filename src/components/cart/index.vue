@@ -31,11 +31,10 @@
 
 <style lang="scss" scope>
   @import '../../css/base.scss';
-  @import '../../css/calcuterem.scss';
 
   .mall-cart {
     padding: rem(20px) 0;
-    width: 100%;
+    // width: 100%;
     font-size: rem(28px);
     color: #4d4d4d;
 

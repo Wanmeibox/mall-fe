@@ -37,8 +37,6 @@ export default {
 </script>
 
 <style lang="scss" scope>
-  // @import '~vux/vux.css';
-  @import '../../css/calcuterem.scss';
   @import '../../css/base.scss';
   @import '../../css/center.scss';
 </style>

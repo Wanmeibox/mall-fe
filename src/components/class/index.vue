@@ -38,7 +38,7 @@
 </script>
 
 <style lang="scss" scope>
-  @import '../../css/calcuterem.scss';
+  @import '../../css/base.scss';
   .mall-class {
     width: 100%;
     font-size: rem(28px);
