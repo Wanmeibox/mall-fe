@@ -20,9 +20,10 @@
     name: 'app',
     watch: {
       '$route': function (to, from) {
-        const toDepth = to.name.split('-').length
-        const formDepth = from.name.split('-').length
-        this.transitionName = toDepth < formDepth ? 'page-slide-right' : 'page-slide-left'
+        const loc = {index: 1, class: 2, cart: 3, center: 1}
+        // const toDepth = to.name.split('-').length
+        // const formDepth = from.name.split('-').length
+        this.transitionName = loc[to.name] < loc[from.name] ? 'page-slide-right' : 'page-slide-left'
       }
     },
     computed: {
