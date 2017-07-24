@@ -1,7 +1,9 @@
 <template>
-  <div :class="['shop', {padd: showHeader}]">
+  <div class="shop">
     <comHeader></comHeader>
-    <router-view></router-view>
+    <transition :name="transitionName">
+      <router-view :class="['v-page', {padd: showHeader}]"></router-view>
+    </transition>
     <comFooter></comFooter>
   </div>
 </template>
@@ -11,7 +13,17 @@
   import comFooter from './components/com/footer.vue'
   export default {
     data () {
-      return {}
+      return {
+        transitionName: ''
+      }
+    },
+    name: 'app',
+    watch: {
+      '$route': function (to, from) {
+        const toDepth = to.name.split('-').length
+        const formDepth = from.name.split('-').length
+        this.transitionName = toDepth < formDepth ? 'page-slide-right' : 'page-slide-left'
+      }
     },
     computed: {
       showHeader () {
@@ -27,8 +39,28 @@
 
 <style lang="scss" scope>
   @import './css/base.scss';
-  @import './css/calcuterem.scss';
+  @import "./css/inout.scss";
+  #app{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .v-page {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 1;
+    width: 100%;
+    height: 100%;
+    background: #FFFFFF;
+    transition: all .4s cubic-bezier(.55,0,.1,1);
+    display: flex;
+    flex-direction: column;
+  }
   .padd {
-    padding-top: rem(80px);
+    top: rem(80px);
   }
 </style>

@@ -11,7 +11,10 @@ Vue.config.productionTip = false
 
 const app = new Vue({
   router,
-  store
+  store,
+  data: {
+    eventHub: new Vue()
+  }
 }).$mount('#app')
 
 export default app
