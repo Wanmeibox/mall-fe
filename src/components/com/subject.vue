@@ -30,7 +30,6 @@
 @import '../../css/base.scss';
 .shop-list {
   padding: rem(20px) 0;
-  width: 100%;
   .shop-item {
     background-color: #fff;
 
