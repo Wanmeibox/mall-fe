@@ -79,12 +79,12 @@
       height: rem(98px);
       width: rem(750px);
       margin: 0 auto;
-      font-size: rem(24px);
+      @include font-dpr(12px);
       padding: 0 rem(24px);
 
       .cart-mark {
         color: #f8d74b;
-        font-size: rem(104px);
+        @include font-dpr(52px);
         -webkit-transform: translate(0, -28%);
         transform: translate(0, -28%);
         position: relative;

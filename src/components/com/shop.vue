@@ -44,7 +44,7 @@
       }
 
       .select-cart {
-        font-size: rem(46px);
+        @include font-dpr(24px);
         margin-right: rem(32px);
       }
 

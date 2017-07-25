@@ -32,7 +32,7 @@
 
   .mall-cart {
     padding: rem(20px) 0;
-    font-size: rem(28px);
+    @include font-dpr(14px);
     color: #4d4d4d;
 
     .attation-cart {

@@ -4,7 +4,7 @@ address,em,strong,h3,h4,h5,i{font-style: normal;font-weight: normal;}
 ul,li{list-style: none;}
 img{border: 0;}
 html{-webkit-overflow-scrolling: touch;height: 100%;}
-body{position:relative;max-width: 640px;min-width: 320px;margin:0 auto;background: #ffffff;font-size: rem(28px);min-height: 100%;}
+body{position:relative;max-width: 640px;min-width: 320px;margin:0 auto;background: #ffffff;@include font-dpr(14px);min-height: 100%;}
 
 input {
   outline: none;

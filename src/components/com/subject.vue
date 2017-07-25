@@ -45,12 +45,12 @@
       color: #222;
 
       h3 {
-        font-size: rem(32px);
+        @include font-dpr(16px);
         font-weight: bold;
       }
       span {
         color: #5073cd;
-        font-size: rem(28px);
+        @include font-dpr(14px);
       }
     }
   }

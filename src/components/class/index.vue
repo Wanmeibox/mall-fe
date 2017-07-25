@@ -41,7 +41,7 @@
   @import '../../css/base.scss';
   .mall-class {
     width: 100%;
-    font-size: rem(28px);
+    @include font-dpr(14px);
 
     li {
       height: rem(300px);
@@ -61,7 +61,7 @@
       }
 
       h3 {
-        font-size: rem(32px);
+        @include font-dpr(16px);
         line-height: rem(36px);
         color: #333;
       }
@@ -78,7 +78,7 @@
     .footer-act {
       text-decoration: none;
       h3 {
-        font-size: rem(32px);
+        @include font-dpr(16px);
         line-height: rem(36px);
         color: #333;
       }

@@ -38,7 +38,7 @@ export default {
     // height: rem(96px);
     width: rem(750px);
     margin: 0 auto;
-    font-size: rem(28px);
+    @include font-dpr(14px);
     text-align: center;
     padding-top: rem(10px);
     .footer-item {
@@ -48,7 +48,7 @@ export default {
       line-height: 1.6;
     }
     div {
-      font-size: rem(40px);
+      @include font-dpr(20px);
       line-height: rem(58px);
     }
 

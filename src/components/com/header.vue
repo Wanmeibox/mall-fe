@@ -41,7 +41,7 @@ export default {
     width: rem(750px);
     color: #fff;
     background-color: #000;
-    font-size: rem(32px);
+    @include font-dpr(16px);
     text-align: center;
     padding: 0 rem(30px);
 
