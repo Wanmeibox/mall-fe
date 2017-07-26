@@ -1,26 +1,17 @@
 <template>
-  <div class="mall-header" v-show="showHeader">
-    <div v-show="showBack" class="back iconfont icon-back" @click="goback">返回</div>
-    <h4>{{headerTitle}}</h4>
+  <div class="mall-header" v-show="getHeaderState">
+    <div v-show="getBackState" class="back iconfont icon-back" @click="goback">返回</div>
+    <h4>{{getHeaderTitle}}</h4>
   </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {}
   },
-  computed: {
-    headerTitle () {
-      return this.$store.getters.getHeaderTitle
-    },
-    showBack () {
-      return this.$store.getters.getBackState
-    },
-    showHeader () {
-      return !this.$store.getters.getHeaderState
-    }
-  },
+  computed: mapGetters(['getHeaderTitle', 'getBackState', 'getHeaderState']),
   methods: {
     goback () {
       this.$router.go(-1)

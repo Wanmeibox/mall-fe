@@ -2,6 +2,9 @@
   <div class="mall-index">
     <comSwiper :banners="banners" v-if="banners"></comSwiper>
     <subject :subjectList="subjectList" v-if="subjectList"></subject>
+    <div class="" @click="getDetail">
+      测试时
+    </div>
   </div>
 </template>
 
@@ -20,7 +23,7 @@
       this.$store.dispatch('changeBackState', false)
       this.$store.dispatch('changeFooterState', true)
       this.getIndexBanner()
-      this.getDetail()
+      // this.getDetail()
     },
     components: {
       comSwiper,
@@ -28,17 +31,19 @@
     },
     methods: {
       getIndexBanner () {
-        this.$axios.http({
-          url: this.$axios.api('subject/getIndexBanner')
-        }).then((result) => {
-          this.banners = result.data
+        this.$axios.get('subject/getIndexBanner').then((result) => {
+          console.log(result.data)
+          this.banners = result.data.data
+        }, () => {
+
         })
       },
       getDetail () {
-        this.$axios.http({
-          url: this.$axios.api('subject/getIndexSubject')
-        }).then((result) => {
-          this.subjectList = result.data
+        this.$axios.get('subject/getIndexSubject').then((result) => {
+          console.log(result.data)
+          this.subjectList = result.data.data
+        }, () => {
+
         })
       }
     }

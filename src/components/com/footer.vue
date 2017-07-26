@@ -1,5 +1,5 @@
 <template>
-  <div v-show="showFooter" class="footer" flex="box:mean">
+  <div v-show="getFooterState" class="footer" flex="box:mean">
     <router-link class="footer-item" v-for="(item, index) in taps" :key="index" :to="{ name: item.goname, params: {}, activeClass: 'footer-active' }">
       <div :class="['iconfont', item.classname]"></div>
       <span>{{item.infoname}}</span>
@@ -8,6 +8,7 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
   data () {
     return {
@@ -19,11 +20,7 @@ export default {
       ]
     }
   },
-  computed: {
-    showFooter () {
-      return this.$store.getters.getFooterState
-    }
-  }
+  computed: mapGetters(['getFooterState'])
 }
 </script>
 

@@ -1,8 +1,12 @@
 <template>
   <div class="shop">
     <comHeader></comHeader>
+    <loading v-show="getLoading"></loading>
+    <div class="">
+      {{getHeaderState}}
+    </div>
     <transition :name="transitionName">
-      <router-view :class="['v-page', {padd: showHeader}]"></router-view>
+      <router-view :class="['v-page', {padd: getHeaderState}]"></router-view>
     </transition>
     <comFooter></comFooter>
   </div>
@@ -11,6 +15,8 @@
 <script type="text/ecmascript-6">
   import comHeader from './components/com/header.vue'
   import comFooter from './components/com/footer.vue'
+  import { Loading } from 'vux'
+  import { mapGetters } from 'vuex'
   export default {
     data () {
       return {
@@ -26,14 +32,11 @@
         this.transitionName = toDepth < formDepth ? 'page-slide-right' : 'page-slide-left'
       }
     },
-    computed: {
-      showHeader () {
-        return !this.$store.getters.getHeaderState
-      }
-    },
+    computed: mapGetters(['getLoading', 'getHeaderState']),
     components: {
-      comHeader: comHeader,
-      comFooter: comFooter
+      comHeader,
+      comFooter,
+      Loading
     }
   }
 </script>

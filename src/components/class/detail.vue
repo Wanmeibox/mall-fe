@@ -7,7 +7,7 @@
       <h3>{{detail.GoodsName}}</h3>
       <div class="shop-price">￥{{detail.Price}}</div>
     </header>
-    <div class="one-detail">
+    <div class="one-detail" @click="getData">
       {{detail.Content}}
     </div>
     <div class="shop-add" flex="cross:center">
@@ -36,18 +36,26 @@
       this.$store.dispatch('changeHeaderTitle', '商品详情')
       this.$store.dispatch('changeBackState', true)
       this.$store.dispatch('changeFooterState', false)
-      this.getData()
+      // this.getData()
     },
     methods: {
       change: function (val) {
         console.log(val)
       },
+      // getData () {
+      //   this.$axios({
+      //     url: 'goods/get?id=1'
+      //   }).then((result) => {
+      //     console.log(result)
+      //     this.detail = result.data
+      //   })
+      // }
       getData () {
-        this.$axios.http({
-          url: this.$axios.api('goods/get?id=1')
-        }).then((result) => {
-          console.log(result)
-          this.detail = result.data
+        this.$axios.get('goods/get?id=1').then((result) => {
+          console.log(result.data)
+          this.detail = result.data.data
+        }, () => {
+
         })
       }
     }
