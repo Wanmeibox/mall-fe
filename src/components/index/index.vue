@@ -22,8 +22,10 @@
       this.$store.dispatch('changeHeaderTitle', '首页')
       this.$store.dispatch('changeBackState', false)
       this.$store.dispatch('changeFooterState', true)
+    },
+    mounted: function () {
       this.getIndexBanner()
-      // this.getDetail()
+      this.getDetail()
     },
     components: {
       comSwiper,

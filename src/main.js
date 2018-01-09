@@ -8,7 +8,6 @@ import 'flex.css'
 // Vue.prototype.$axios = axios
 
 axios.interceptors.request.use(function (config) { // 配置发送请求的信息
-  console.log(store.dispatch('showLoading'))
   store.dispatch('showLoading')
   return config
 }, function (error) {
@@ -16,8 +15,8 @@ axios.interceptors.request.use(function (config) { // 配置发送请求的信�
 })
 
 axios.interceptors.response.use(function (response) { // 配置请求回来的信息
-  console.log(store.dispatch('hideLoading'))
   store.dispatch('hideLoading')
+  console.log(response)
   return response
 }, function (error) {
   store.dispatch('hideLoading')
